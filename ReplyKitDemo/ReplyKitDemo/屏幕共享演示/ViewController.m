@@ -123,12 +123,12 @@ static void *KVOContext = &KVOContext;
     if ([keyPath isEqualToString:@"frame"]) {
         NSDictionary *i420Frame = change[NSKeyValueChangeNewKey];
         NSData *data = i420Frame[@"data"];
-        unsigned int width = [i420Frame[@"width"] unsignedIntValue];
-        unsigned int height = [i420Frame[@"height"] unsignedIntValue]
+//        unsigned int width = [i420Frame[@"width"] unsignedIntValue];
+//        unsigned int height = [i420Frame[@"height"] unsignedIntValue];
 
         NTESI420Frame *frame = [NTESI420Frame initWithData:data];
-        frame.width = width;
-        frame.height = height;
+//        frame.width = width;
+//        frame.height = height;
         CMSampleBufferRef sampleBuffer = [frame convertToSampleBuffer];
 
         // 防止内存泄漏
